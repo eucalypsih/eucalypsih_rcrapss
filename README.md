@@ -8,5 +8,15 @@ mov x0,  0 // status keluar 0
 mov x8, 64 // syscall number untuk write
 mov x8, 93 // syscall number untuk exit
 
-ldr x2, [x2] LDR r2, [r2]
+
+LDR r2, [r2] // arm
+ldr x2, [x2] // arch64
+LW $t0,  0($t0) // mips
+LD $t0,  0($t0) // mips64
+
+
+
+
+
+
 
