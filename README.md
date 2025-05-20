@@ -13,7 +13,7 @@ LDR r2, [r2] // arm
 ldr x2, [x2] // arch64
 LW $t0,  0($t0) // mips
 LD $t0,  0($t0) // mips64
-
+LOAD.W (r2), (r2) // esp32
 
 
 
