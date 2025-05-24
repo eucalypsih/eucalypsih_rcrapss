@@ -9,7 +9,7 @@ mov x8, 64 // syscall number untuk write
 mov x8, 93 // syscall number untuk exit
 
 adr x2,  msg // cocok dipakai saat string/data delay dengnan kode.
-ldr x2,  =msg // pointer ke string, bahkan kalau jauh
+ldr x2,  =msg // digunakan kalau data jauh atau ingin alamat pasti melalui literal pool.
 
 LDR r2, [r2] // arm
 ldr x2, [x2] // arch64
