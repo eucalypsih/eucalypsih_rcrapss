@@ -2,11 +2,11 @@
 ldr reg, [reg] // membaca nilai dari memori di alamat yang ada di register [reg]
 str reg, [reg] // menulis nilai dari register [reg] ke alamat memori
 
-mov x0,  1 // stdout (file descriptor 1)
-mov x0,  0 // status keluar 0
+mov r0,  #1    mov x0,  1 // stdout (file descriptor 1)
+mov r0,  #0    mov x0,  0 // status keluar 0
 
-mov x8, 64 // syscall number untuk write
-mov x8, 93 // syscall number untuk exit
+mov r7,  #4    mov x8, 64 // syscall number untuk write
+mov r7,  #1    mov x8, 93 // syscall number untuk exit
 
 adr x2,  msg // cocok dipakai saat string/data delay dengnan kode.
 ldr x2,  =msg // digunakan kalau data jauh atau ingin alamat pasti melalui literal pool.
