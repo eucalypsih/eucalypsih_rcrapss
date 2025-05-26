@@ -18,6 +18,26 @@ LD $t0,  0($t0) // mips64
 LOAD.W (r2), (r2) // esp32
 
 
+```assembly
+.global _start
+
+_start:
+    // Syscall: write (4)
+    mov r7, #4          // Syscall number for 'write'
+    mov r0, #1          // File descriptor 1 (stdout)
+    ldr r1, =message    // Address of the message to write
+    mov r2, #13         // Length of the message
+    svc #0              // Make the system call
+
+    // Syscall: exit (1)
+    mov r7, #1          // Syscall number for 'exit'
+    mov r0, #0          // Exit status 0
+    svc #0              // Make the system call
+
+message:
+    .asciz "Hello, ARM!\n"
+
+```
 
 
 
