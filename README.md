@@ -27,8 +27,9 @@ _start:
     mov r0, #1          // File descriptor 1 (stdout)
     ldr r1, =message    // Load adress of the message to write
     mov r2, #13         // Length of the message
-   // or ldr r2, =length  // Load address of the length
-    svc #0              // Make the system call
+   // ldr r2, =length  // Load address of the length
+    // mov r2,  [r2] // Load the length of the message
+   svc #0              // Make the system call
 
     // Syscall: exit (1)
     mov r7, #1          // Syscall number for 'exit'
