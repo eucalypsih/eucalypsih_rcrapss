@@ -27,6 +27,7 @@ _start:
     mov r0, #1          // File descriptor 1 (stdout)
     ldr r1, =message    // Load adress of the message to write
     mov r2, #13         // Length of the message
+   // or ldr r2, =length  // Load address of the length
     svc #0              // Make the system call
 
     // Syscall: exit (1)
@@ -36,6 +37,9 @@ _start:
 
 message:
     .asciz "Hello, ARM!\n"
+
+length:
+    .word 12
 
 ```
 
