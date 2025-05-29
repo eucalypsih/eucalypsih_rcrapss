@@ -25,7 +25,7 @@ _start:
     // Syscall: write (4)
     mov r7, #4          // Syscall number for 'write'
     mov r0, #1          // File descriptor 1 (stdout)
-    ldr r1, =message    // Address of the message to write
+    ldr r1, =message    // Load adress of the message to write
     mov r2, #13         // Length of the message
     svc #0              // Make the system call
 
