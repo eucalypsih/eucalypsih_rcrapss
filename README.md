@@ -2,6 +2,8 @@
 ldr reg, [reg] // membaca nilai dari memori di alamat yang ada di register [reg]
 str reg, [reg] // menulis nilai dari register [reg] ke alamat memori
 
+ldr r1, =msg        ldr x1, =msg     // load address of the message to write
+
 mov r0,  #1    mov x0,  1 // stdout (file descriptor 1)
 mov r0,  #0    mov x0,  0 // status keluar 0
 
